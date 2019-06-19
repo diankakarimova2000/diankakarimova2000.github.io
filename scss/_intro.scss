@@ -1,0 +1,204 @@
+.intro__wrapper {
+  
+  @extend .main-wrapper;
+
+  @media screen and (max-width: 1250px) {
+    width: 100%;
+  }  
+}
+
+.intro__sidebar {
+  width: 297px;
+  margin-right: 40px;
+  margin-bottom: 40px;
+  
+  @include section-box-shadow;
+  
+  @media screen and (max-width: 1250px) {
+    display: none;
+  }
+}
+
+.aside-menu {
+  @include list;
+  padding: 10px;
+  background-color: #fff;
+  
+}
+
+.aside-menu__item {
+  position: relative;
+  width: 100%;
+  padding: 15.5px;
+  padding-left: 40px;
+  border-bottom: 1px solid #eaeaea;
+  box-sizing: border-box;
+}
+
+.aside-menu__item:last-child {
+  border-bottom: 0;
+}
+
+.aside-menu__item::before {
+  position: absolute;
+  top: 50%;
+  left: 11px;
+  content: "";
+  display: block;
+  width: 13px;
+  height: 13px;
+  margin-top: -7px;
+  background: url(../img/design/sprite.png) no-repeat;
+  background-position: -282px -5px;
+}
+
+.aside-menu__item:hover::before {
+  background-position: -305px -5px;
+}
+
+.aside-menu__link {
+  display: block;
+  width: 100%;
+  color: #222;
+  
+  &:hover {
+    color: $red-bg-color;
+  }
+  
+  &:focus {
+    @extend .aside-menu__link:hover;
+    outline: none;
+  }
+  
+  &:active {
+    color: $red-active-color;
+  }
+}
+
+.aside-submenu {
+  position: absolute;
+  top: 5px;
+  left: 90%;
+  z-index: 10;
+  
+  display: none;
+  background-color: #fff;
+  @include list;
+}
+
+.aside-submenu__item {
+  width: 250px;
+  padding: 15.5px;
+  border-bottom: 1px solid #eaeaea;
+  box-sizing: border-box;
+}
+
+.aside-menu__item:hover > .aside-submenu {
+  display: block;
+} 
+
+.aside-submenu__link {
+  @extend .aside-menu__link;
+}
+
+.banner {
+  width: calc(100% - 297px - 40px);
+  
+  @media screen and (max-width: 1250px) {
+    width: 100%;
+    max-width: 834px;
+    margin: 0 auto 30px auto;
+  }
+}
+
+.banner__info {
+  position: relative;
+  margin: 0;
+  padding: 0;
+
+}
+
+.banner__photo {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-top: 45%;
+} /*дополнительный контейнер для корректного отображения в ie*/
+
+.banner__img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.banner__btn {
+  position: absolute;
+  left: 21%;
+  top: 70.5%;
+  
+  padding: 10px;
+  border: 2px solid #000;
+  box-sizing: border-box;
+  
+  &:hover {
+    color: #ffc66b;
+    background-color: #000;
+  }
+  
+  &:focus {
+    @extend .banner__btn:hover;
+    outline: none;
+  }
+  
+  &:active {
+    background-color: #1a1a1a;
+  }
+  
+  @media screen and (max-width: 500px) {
+    left: 15%;
+    top: 68%;
+    font-size: 12px;
+  }
+}
+
+.features {
+  display: flex;
+  flex-flow: row wrap;
+  @include list;
+  padding: 2px;
+  box-sizing: border-box;
+  background-color: $red-bg-color;
+  
+  @media screen and (max-width: 550px) {
+    flex-flow: column wrap;
+  }
+}
+
+.features__item {
+  width: 33.333%;
+  padding: 5px;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: $main-font-size;
+  color: #fff;
+  
+  @media screen and (max-width: 550px) {
+    width: 80%;
+    margin: 0 auto;
+    padding: 0;
+  }
+}
+
+.features__name {
+  margin-bottom: 0;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.features__description {
+  margin-top: 0;
+}
+
